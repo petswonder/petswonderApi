@@ -101,6 +101,9 @@ app.set('view engine', 'ejs');
 import { router as router_public } from "./src/routes/public.js";
 app.use("/", router_public);
 
+app.get('/', (req, res) => {
+  res.send('HEY!')
+})
 
 app.listen(APP_PORT, () => {
   console.log(`Server started on port ${APP_PORT}...`);
