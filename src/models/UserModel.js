@@ -149,7 +149,7 @@ export class UserModel {
     
   }
 
-  cartSummary( user){
+  cartSummary(user){
     
     return new Promise((resolve, reject) => {
       this.con.query(queries['user']['cart_summary'], [user], (error, result) => {

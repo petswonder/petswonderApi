@@ -33,6 +33,10 @@ const Auth = new AuthUtil();
 // Routes
 router.get("/products", productController.getAllProducts);
 router.get("/product/:id", productController.getProductById);
+router.get("/productbybrands", productController.getProductByBrand);
+router.get("/productbypet", productController.getProductByPet);
+router.get("/productbycategory", productController.getProductByCategory);
+router.get("/productbysubcategory", productController.getProductByCategory);
 router.post("/cart", userController.getCart);
 router.post("/cart/addToCart", userController.addToCart);
 // router.post("/cart/removeFromCart", Auth.ensureAuthenticated, publicController.removeFromCart);

@@ -53,7 +53,7 @@ export class UserController {
       };
 
       await User.storeOTP(otp, req.query.number)
-      var publishTextPromise = new AWS.SNS({ apiVersion: '2010-03-31' }).publish(params).promise();
+      var publishTextPromise = new AWS.SNS({ apiVersion: '2010-03-31', region: 'ap-south-1' }).publish(params).promise();
 
       publishTextPromise.then((data) => {
               res.send(JSON.stringify({ MessageID: data.MessageId }));

@@ -38,9 +38,10 @@ import {
           })
       }
 
-      editPet(number){
+      editPet(name, breed, gender, dob, type, userNumber){
+        
         return new Promise((resolve, reject) => {
-            this.con.query(queries['user']['edit_pet_profile'], [number], (error, result) => {
+            this.con.query(queries['user']['edit_pet_profile'], [name, breed, gender, dob, type, userNumber], (error, result) => {
               if (error) {
                 reject(error)
               }

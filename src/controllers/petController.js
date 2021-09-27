@@ -30,10 +30,10 @@ export class PetController {
     }
 
     async editPetProfile(req, res){
-        // console.log(req.body.userNumber)
-        const user_mobile = (req.body.userNumber)
+        console.log(req.body)
+        const data = req.body
         try{
-          let result = await Pet.editPet(user_mobile)
+          let result = await Pet.editPet(data.name, data.breed, data.gender, data.dob, data.category, data.userNumber)
           res.end(JSON.stringify(result))
         } catch(e) {
             throw e;

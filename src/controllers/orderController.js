@@ -7,7 +7,7 @@ const Order = new OrderModel();
 export class OrderController{
 
     async confirmOrder(req,res){
-        
+        console.log(req)
     }
 
 }
