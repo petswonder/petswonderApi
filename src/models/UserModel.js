@@ -19,7 +19,14 @@ export class UserModel {
         if (error) {
           reject(error)
         } else {
-          resolve("You are now registered and can log in");
+          this.con.query(queries['user']['create_user_cart'],[mobile], (err, result) => {
+            if(err){
+              reject(err)
+            }
+            else{
+              resolve("You are now registered and can log in");
+            }
+          })
         }
       })
     })
@@ -81,7 +88,7 @@ export class UserModel {
 
   addToCart(user, id){
     return new Promise((resolve, reject) => {
-      this.con.query(queries['user']['add_to_cart'], [user, id], (error, result) => {
+      this.con.query(queries['user']['add_to_cart'], [user, id, user], (error, result) => {
         if (error) {
           reject(error)
         }
