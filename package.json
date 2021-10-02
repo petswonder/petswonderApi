@@ -6,9 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node app.js",
-    "build": "webpack --config prod.config.js",
     "dev": "npx nodemon",
-    "create-db": "node ./src/seed/db_creation.js"
+    "build": ""
   },
   "keywords": [],
   "author": "Jorge García Torralba",
