@@ -7,10 +7,10 @@ const csrfProtection = csrf({cookie: true});
 const router = express.Router();
 // router.use(csrfProtection);
 
-// router.get('/', csrfProtection, (req, res, next) => {
+// router.get('/', (req, res) => {
 //   // res.cookie('CSRF-Token', req.csrfToken(), { httpOnly: false });
 //   // next();
-//   res.send({ csrfToken: req.csrfToken() })
+//   res.send('api')
 // });
 
 // Import controller methods
